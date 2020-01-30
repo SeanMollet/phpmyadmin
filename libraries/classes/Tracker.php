@@ -130,7 +130,7 @@ class Tracker
      */
     public static function isTracked($dbname, $tablename)
     {
-        if (! self::$enabled) {
+        if (! self::$enabled || !isset($dbname) || !isset($tablename)) {
             return false;
         }
 
